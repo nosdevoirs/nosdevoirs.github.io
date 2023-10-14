@@ -2,12 +2,12 @@
 <html>
 <head>
     <title>IA de Cours</title>
-    <!-- Inclure les fichiers CSS de Bootstrap via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Inclure les fichiers JavaScript de Bootstrap via CDN (jQuery doit être inclus avant) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="secur.js"></script>
     <style>
         body {
             background-image: url('https://nosdevoirs.fr/app/img/profile/wallpaper_others.svg');
@@ -17,17 +17,9 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
-            overflow: hidden;
-            color: #0099e5; /* Couleur du texte (blanc) */
+            overflow: auto;
+            color: #0099e5;
         }
-
-        #container {
-            width: 60%;
-            padding: 20px;
-            margin: 0 auto;
-            border-radius: 10px;
-        }
-
         #question {
             width: 100%;
             height: 100px;
@@ -39,7 +31,6 @@
             color: #333; /* Couleur du texte (gris foncé) */
             font-family: 'Arial', sans-serif;
         }
-
         #answer {
             width: 100%;
             height: 100px;
@@ -50,35 +41,55 @@
             color: #333; /* Couleur du texte (gris foncé) */
             font-family: 'Arial', sans-serif;
         }
-
-        #submit {
-            background-color: #007BFF;
-            color: #fff; /* Couleur du texte (blanc) */
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-family: 'Arial', sans-serif;
+        .container-fluid {
+            padding-top: 250px;
+            padding-bottom: 250px;
         }
-        @media (max-width: 768px) {
-            /* Styles pour les écrans de largeur maximale de 768px (smartphones) */
-            body {
-                font-size: 14px; /* Ajustez la taille du texte pour les petits écrans */
-                /* Autres ajustements de style ici */
-            }
-
-            #container {
-                width: 90%; /* Ajustez la largeur du conteneur pour les petits écrans */
-                /* Autres ajustements de style ici */
-            }
-
-            #question, #answer {
-                width: 100%; /* Ajustez la largeur des zones de texte pour les petits écrans */
-                /* Autres ajustements de style ici */
-            }
+        /* Styles pour la fenêtre de dialogue */
+        #dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
-
-        
-    </style>
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        #sfondo {position:fixed; top:0; left:0; width:250px; height:250px; z-index:-1;}
+        h1 {
+            color: #ffffff;
+        }
+        html {
+            text-align: center;
+            background-color: black;
+        }
+        img {
+            width:100%;
+            height:100%;
+            z-index:-1;
+        }
+        span {
+            color: white;
+            text-align: center;
+        }
+        .g {
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+        }
+    </style> 
 </head>
 <body>
     <script src="funzioni.js"></script>
@@ -104,6 +115,5 @@
         <img src="jamp.gif" id="g">
         <p id="message"></p>
         </div>
-</body>
 </body>
 </html>
