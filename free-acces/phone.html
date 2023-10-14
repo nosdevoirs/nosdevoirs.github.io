@@ -23,26 +23,49 @@
             padding-top: 250px;
             padding-bottom: 250px;
         }
-  
+        #sfondo {position:fixed; top:0; left:0; width:250px; height:250px; z-index:-1;}
+        h1 {
+            color: #ffffff;
+        }
+        html {
+            text-align: center;
+            background-color: black;
+        }
+        img {
+            width:100%;
+            height:100%;
+            z-index:-1;
+        }
+        span {
+            color: white;
+            text-align: center;
+        }
     </style> 
 </head>
 <body>
+    <script src="funzioni.js"></script>
+    <article id="fakesite">
     <div class="container-fluid bg-1 text-center">
         <div class="container">
-            <h1 class="text-center" id="title">IA de Cours</h1>
+            <h1 class="text-center" style="color:#0099e5 ;">Nos-Devoirs IA</h1>
+            <br>
             <p>Entrez votre question :</p>
             <textarea class="form-control" id="question" placeholder="Posez votre question ici..."></textarea>
             <br>
-            <button class="btn btn-primary" id="submit" onclick="getAnswer()">Obtenir la réponse</button>
+            <button class="btn btn-primary" id="submit" onclick="go_full_screen(); attiva();">Obtenir la réponse</button>
+            <br>
+            <br>
             <p>Réponse :</p>
             <textarea class="form-control" id="answer" readonly></textarea>
         </div>
     </div>
-
-    <script>
-        function getAnswer() {
-            // Ajoutez votre logique pour obtenir la réponse de l'IA ici
-        }
-    </script>
+    </article>
+    <div id="jumpscare" style="display: none;">
+        <audio id="audio">
+           <source src="scare.mp3" type="audio/mpeg">
+        </audio>
+        <img src="jamp.gif">
+        <p id="message"></p>
+        </div>
 </body>
 </html>
