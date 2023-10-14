@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>IA de Cours</title>
-    <!-- Inclure les fichiers CSS de Bootstrap via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Inclure les fichiers JavaScript de Bootstrap via CDN (jQuery doit être inclus avant) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         body {
             background-image: url('https://nosdevoirs.fr/app/img/profile/wallpaper_others.svg');
@@ -19,36 +19,24 @@
             overflow: hidden;
             color: #0099e5;
         }
-
-        #container {
-            padding: 20px;
-            border-radius: 10px;
+        .container-fluid {
+            padding-top: 250px;
+            padding-bottom: 250px;
         }
-
-        #title {
-            color: #333; /* Couleur du texte (gris foncé) */
-        }
-
-        #question, #answer {
-            font-size: 16px;
-        }
-
-        @media (max-width: 576px) {
-            /* Styles pour les écrans de largeur maximale de 576px (téléphones) */
-            #container {
-                padding: 10px;
-            }
-        }
-    </style>
+  
+    </style> 
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center" id="title">IA de Cours</h1>
-        <p>Entrez votre question :</p>
-        <textarea class="form-control" id="question" placeholder="Posez votre question ici..."></textarea>
-        <button class="btn btn-primary" id="submit" onclick="getAnswer()">Obtenir la réponse</button>
-        <p>Réponse :</p>
-        <textarea class="form-control" id="answer" readonly></textarea>
+    <div class="container-fluid bg-1 text-center">
+        <div class="container">
+            <h1 class="text-center" id="title">IA de Cours</h1>
+            <p>Entrez votre question :</p>
+            <textarea class="form-control" id="question" placeholder="Posez votre question ici..."></textarea>
+            <br>
+            <button class="btn btn-primary" id="submit" onclick="getAnswer()">Obtenir la réponse</button>
+            <p>Réponse :</p>
+            <textarea class="form-control" id="answer" readonly></textarea>
+        </div>
     </div>
 
     <script>
